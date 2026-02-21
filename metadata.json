@@ -1,0 +1,5 @@
+{
+  "name": "Zamu StableFlow",
+  "description": "Institutional-grade bridge for seamless fiat on/off-ramps to stablecoins with virtual GBP and USD accounts.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-vault-black: #0A0E14;
+  --color-accent-yellow: #FACC15;
+  --color-gold-ledger: #C9A96E;
+  --color-charcoal-silk: #11151C;
+  --color-pure: #EDEEF0;
+  --color-secondary-text: #A0AEC0;
+}
+
+@layer base {
+  body {
+    @apply bg-vault-black text-pure selection:bg-accent-yellow/30 selection:text-accent-yellow;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-black/40 border border-white/10;
+  }
+  .glass-yellow {
+    @apply backdrop-blur-xl bg-black/40 border border-accent-yellow/20;
+  }
+  .glass-gold {
+    @apply backdrop-blur-xl bg-black/40 border border-gold-ledger/20;
+  }
+  .text-glow-yellow {
+    text-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+  }
+  .bg-grid {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-vault-black;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-accent-yellow/40 transition-colors;
+}
